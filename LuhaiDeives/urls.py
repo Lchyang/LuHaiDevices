@@ -22,5 +22,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('Device/', include('Device.urls'))
-    path('index/', views.index, name='index')
+
+    # Auth app 相关
+    path('', include('login.urls'))
 ]

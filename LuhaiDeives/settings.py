@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'Device.apps.DeviceConfig',
     'Blog.apps.BlogConfig',
     'account.apps.AccountConfig',
+    'login.apps.LoginConfig',
+    'captcha', # 验证码相关APP
 ]
 
 MIDDLEWARE = [
@@ -122,3 +124,19 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# 邮件发送配置
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.163.com'
+EMAIL_PORT = 25
+# 发送邮件的邮箱
+EMAIL_HOST_USER = '***@163.com'
+# 在邮箱中设置的客户端授权密码
+EMAIL_HOST_PASSWORD = '***'
+# 收件人看到的发件人
+EMAIL_FROM = 'python<***@163.com>'  # 需要和邮箱号码一致
+
+
+# 注册有效期天数
+CONFIRM_DAYS = 7
